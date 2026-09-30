@@ -1,0 +1,19 @@
+The project is based on Harry Markowitz's Nobel-prize winning Modern Portfolio Theory. It calculates optimal asset allocation in a portfolio. Data is from Yahoo Finance, system is based on Python and the interface is run by Streamlit.
+
+There are two types of risk: asset-specific risk and market risk. By diversifying our portfolio, we can eliminate the asset-specific risk, as they cancel eachother out. By holding a single Stock, your investment is exposed to the asset-specific risk aswell.
+
+The model takes correlation into account, this simply means to what degree the assets move together, or in the opposite direction. A perfect correlation (corr = 1) would mean the two assets perfectly move together.
+
+Calculation:
+
+- Expected return: The portfolio's expected return is the weighted expected return of the different assets.
+- Risk (Standard deviation): The portfolio's risk comes from the returns volatility/standard deviation. It can be calculated using covariance.
+- Constraints: Sum of weights should be 1, and we can't short the assets (no negative weight).
+
+Max Sharpe-rate Portfolio/Tangency Portfolio: Looks for the perfect allocation with the highest return for the given risk, meaning best risk-to-reward.
+(SciPy can only minimize, thus we minimize a negative Sharpe-rate.)  
+Minimum Volatility Portfolio: Return is not considered, the goal is minimizing standard deviation of the portfolio. This is the one with the least price fluctuation.
+
+The Monte Carlo simulation shows portfolios with random weights. The Efficient frontier is where the portfolios with the maximum reward to risk lie.
+
+Disclaimer: This is a student project. Use for your investments only at your own discretion.
